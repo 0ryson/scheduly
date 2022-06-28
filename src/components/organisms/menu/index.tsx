@@ -5,11 +5,7 @@ type Iprops = {
 }
 
 const Menu = ({ children }: Iprops): JSX.Element => {
-  return (
-    <div className="menu bg-gray-400 xl:col-span-1 sm:col-span-1 xs:col-span-1">
-      {children}
-    </div>
-  )
+  return <div className="menu">{children}</div>
 }
 
 export default Menu

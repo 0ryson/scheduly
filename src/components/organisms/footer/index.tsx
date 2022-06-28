@@ -5,7 +5,7 @@ type Iprops = {
 }
 
 const Footer = ({ children }: Iprops): JSX.Element => {
-  return <footer className="footer">{children}</footer>
+  return <footer className="footer opacity-50">{children}</footer>
 }
 
 export default Footer

@@ -1,7 +1,7 @@
 import React from 'react'
 
 type Iprops = {
-  children: React.ReactNode
+  children?: React.ReactNode
 }
 
 const Content = ({ children }: Iprops): JSX.Element => {

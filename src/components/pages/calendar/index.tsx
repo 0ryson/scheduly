@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Content from '../../organisms/content'
 import Footer from '../../organisms/footer'
 import Header from '../../organisms/header'
 import Menu from '../../organisms/menu'
+import MainContext from '../../../contexts/MainContext'
 
-const Calendar: React.FC = () => {
+const Calendar = () => {
+  //const { value, setValue } = useContext(MainContext)
+
   return (
     <div className="app layout-calendar w-full bg-slate-300">
       <div className="w-full bg-emerald-200">

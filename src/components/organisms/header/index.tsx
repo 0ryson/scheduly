@@ -4,7 +4,7 @@ type Iprops = {
   children: React.ReactNode
 }
 
-const Header: React.FC<Iprops> = ({ children }: Iprops) => {
+const Header = ({ children }: Iprops): JSX.Element => {
   return <header className="header">{children}</header>
 }
 

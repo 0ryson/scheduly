@@ -4,7 +4,7 @@ type Iprops = {
   children: React.ReactNode
 }
 
-const Footer: React.FC<Iprops> = ({ children }: Iprops) => {
+const Footer = ({ children }: Iprops): JSX.Element => {
   return <footer className="footer">{children}</footer>
 }
 

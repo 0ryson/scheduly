@@ -1,5 +1,5 @@
 import React from 'react'
-import Calendar from './components/pages/Calendar'
+import MyCalendar from './components/pages/MyCalendar'
 import ComingSoon from './components/pages/ComingSoon'
 import NotFound from './components/pages/NotFound'
 import MainProvider from './contexts/MainProvider'
@@ -11,8 +11,8 @@ function App() {
     <MainProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Calendar />} />
-          <Route path="my-calendar" element={<Calendar />} />
+          <Route path="/" element={<MyCalendar />} />
+          <Route path="my-calendar" element={<MyCalendar />} />
           <Route path="for-teams" element={<ComingSoon />} />
           <Route path="public" element={<ComingSoon />} />
           <Route path="account" element={<ComingSoon />} />

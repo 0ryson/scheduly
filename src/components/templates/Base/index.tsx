@@ -20,10 +20,6 @@ const Base = ({ children }: IProps): JSX.Element => {
     openMenu ? setOpenMenu(false) : setOpenMenu(true)
   }
 
-  useEffect(() => {
-    console.log('openMenu', openMenu)
-  }, [openMenu])
-
   return (
     <div className="w-full h-screen flex bg-white">
       <div

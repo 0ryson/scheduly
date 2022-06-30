@@ -33,7 +33,7 @@ const Menu = ({ pages }: IProps): JSX.Element => {
           pages.map((page) => {
             const icon = pageslist.find((ele) => ele.page === page && ele.icon)
             return (
-              <li className="mb-3 text-md font-bold">
+              <li className="mb-3 text-md font-bold" key={page}>
                 <Link
                   to={`/${page}`}
                   className="flex justify-start items-center capitalize"
@@ -46,10 +46,10 @@ const Menu = ({ pages }: IProps): JSX.Element => {
               </li>
             )
           })}
-        <li className="mt-7">
+        <li className="mt-7" key="account">
           <Link to="/account">Account</Link>
         </li>
-        <li className="mt-1">
+        <li className="mt-1" key="logout">
           <Link to="#">Logout</Link>
         </li>
       </ul>

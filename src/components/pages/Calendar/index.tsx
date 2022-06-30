@@ -94,7 +94,7 @@ const Calendar = () => {
         <Brand />
         <Menu pages={['private', 'team', 'public']} />
       </div>
-      <div className="w-full flex flex-col justify-between bg-slate-200">
+      <div className="w-full flex flex-col justify-between">
         <div className="px-8 py-6 bg-white">
           <Header className="flex justify-between">
             <ToggleMenu />
@@ -116,7 +116,7 @@ const Calendar = () => {
                   return (
                     <li
                       key={dayNumber}
-                      className={`p-3 bg-white h-32 border-2 hover:border-black transition ${
+                      className={`p-3 bg-white h-32 border hover:border-black transition ${
                         dayNumber === 0 && ` col-start-${firstDay}`
                       }`}
                     >

@@ -16,7 +16,7 @@ const NotFound = () => {
         <Brand />
         <Menu pages={['private', 'team', 'public']} />
       </div>
-      <div className="w-full flex flex-col justify-between bg-slate-200">
+      <div className="w-full flex flex-col justify-between">
         <div className="px-8 py-6 bg-white">
           <Header className="flex justify-between">
             <ToggleMenu />
@@ -24,7 +24,7 @@ const NotFound = () => {
             <Notifications />
           </Header>
         </div>
-        <div className="overflow-y-auto w-full h-full mx-auto px-8 py-6 max-w-screen-xl">
+        <div className="flex flex-col justify-between overflow-y-auto w-full h-full mx-auto px-8 py-6 max-w-screen-xl">
           <Content>
             <div className="py-4 text-center">
               <h1 className="text-4xl">
@@ -32,7 +32,7 @@ const NotFound = () => {
               </h1>
             </div>
           </Content>
-          <div className="px-8 py-6">
+          <div className="mt-10 px-8 py-6">
             <Footer>
               <Copyrigth />
             </Footer>

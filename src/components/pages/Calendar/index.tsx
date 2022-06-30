@@ -84,8 +84,7 @@ const Calendar = () => {
 
   const daysInMonth = dayjs().daysInMonth()
   console.log('daysInMonth', daysInMonth)
-  const firstDayEn = parseInt(dayjs().date(1).format('d'))
-  const firstDay = firstDayEn === 0 ? 7 : firstDayEn
+  const firstDay = parseInt(dayjs().date(1).format('d'))
   console.log('firstDay', firstDay)
 
   return (
@@ -102,23 +101,24 @@ const Calendar = () => {
             <Notifications />
           </Header>
         </div>
-        <div className="overflow-y-auto w-full h-full mx-auto px-8 py-6 max-w-screen-xl">
+        <div className="flex flex-col justify-between overflow-y-auto w-full h-full mx-auto px-8 py-6 max-w-screen-xl">
           <Content>
             <div>
-              <div className=" text-2xl text-center">{currentYear}</div>
+              <div className="text-2xl text-center">{currentYear}</div>
               <h2 className="pb-6 text-4xl font-bold text-center">
                 {currentMonth}
               </h2>
             </div>
             <div>
               <ol className="grid grid-cols-7 gap-1">
+                {[...new Array(firstDay - 1)].map((_, i) => (
+                  <li key={'-' + i}></li>
+                ))}
                 {[...new Array(daysInMonth)].map((_, dayNumber) => {
                   return (
                     <li
                       key={dayNumber}
-                      className={`p-3 bg-white h-32 border hover:border-black transition ${
-                        dayNumber === 0 && ` col-start-${firstDay}`
-                      }`}
+                      className="p-3 bg-white h-32 border hover:border-black transition"
                     >
                       <span
                         className={`inline-block mb-1 p-1 w-7 h-7 text-sm ${
@@ -148,7 +148,7 @@ const Calendar = () => {
               </ol>
             </div>
           </Content>
-          <div className="px-8 py-6">
+          <div className="mt-10 px-8 py-6">
             <Footer>
               <Copyrigth />
             </Footer>

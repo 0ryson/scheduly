@@ -98,12 +98,11 @@ const Calendar = () => {
               return (
                 <li
                   key={dayNumber}
-                  className="p-3 bg-white h-32 border hover:border-black transition"
+                  className="px-2 py-1 sm:px-3 sm:py-2 bg-white h-16 sm:h-32 border hover:border-black transition"
                 >
                   <span
-                    className={`inline-block mb-1 p-1 w-7 h-7 text-sm ${
-                      currentDay === dayNumber + 1 &&
-                      'bg-red-600 rounded-full text-white text-center'
+                    className={`inline-block pr-2 text-sm ${
+                      currentDay === dayNumber + 1 && 'text-red-600'
                     }`}
                   >
                     {dayNumber + 1}
@@ -114,10 +113,10 @@ const Calendar = () => {
                       return obj.events.map((event, iEvent) => {
                         return (
                           <div
-                            className="inline-block w-full mr-1/2 mb-1/2 py-1 px-2 text-xs text-white bg-black rounded-sm"
+                            className="inline-block h-2 w-2 text-xs text-white border border-white bg-black rounded-full"
                             key={iEvent}
                           >
-                            {event.name}
+                            {/* {event.name} */}
                           </div>
                         )
                       })

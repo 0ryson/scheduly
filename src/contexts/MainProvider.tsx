@@ -6,11 +6,11 @@ type IProps = {
 }
 
 const MainProvider = ({ children }: IProps): JSX.Element => {
-  const [value, setValue] = useState(null)
+  const [openMenu, setOpenMenu] = useState(false)
 
   const mainContext = {
-    value,
-    setValue: (value: any) => setValue(value),
+    openMenu,
+    setOpenMenu: (value: any) => setOpenMenu(value),
   }
   return (
     <MainContext.Provider value={mainContext}>{children}</MainContext.Provider>

@@ -8,20 +8,19 @@ interface IProps {
 
 const pageslist = [
   {
-    page: 'private',
+    page: 'my-calendar',
+    name: 'My calendar',
     icon: <FaUser />,
   },
   {
-    page: 'team',
+    page: 'for-teams',
+    name: 'For teams',
     icon: <FaUserFriends />,
   },
   {
     page: 'public',
+    name: 'Public',
     icon: <FaUsers />,
-  },
-  {
-    page: 'account',
-    icon: null,
   },
 ]
 
@@ -31,27 +30,23 @@ const Menu = ({ pages }: IProps): JSX.Element => {
       <ul>
         {pages &&
           pages.map((page) => {
-            const icon = pageslist.find((ele) => ele.page === page && ele.icon)
+            const pageObj = pageslist.find(
+              (ele) => ele.page === page && ele.icon
+            )
             return (
               <li className="mb-3 text-md font-bold" key={page}>
                 <Link
                   to={`/${page}`}
-                  className="flex justify-start items-center capitalize"
+                  className="flex justify-start items-center"
                 >
                   <span className="inline-block pr-3 font-bold text-xl">
-                    {icon?.icon}
+                    {pageObj?.icon}
                   </span>
-                  <span className="inline-block">{page}</span>
+                  <span className="inline-block">{pageObj?.name}</span>
                 </Link>
               </li>
             )
           })}
-        <li className="mt-7" key="account">
-          <Link to="/account">Account</Link>
-        </li>
-        <li className="mt-1" key="logout">
-          <Link to="#">Logout</Link>
-        </li>
       </ul>
     </div>
   )

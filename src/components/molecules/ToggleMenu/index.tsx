@@ -1,10 +1,23 @@
-import React from 'react'
-import { TbMenu2 } from 'react-icons/tb'
+import React, { useContext } from 'react'
+import { TbMenu2, TbArrowBarLeft } from 'react-icons/tb'
+import MainContext from '../../../contexts/MainContext'
 
 const ToggleMenu = () => {
+  const { openMenu, setOpenMenu } = useContext(MainContext)
+
+  const toggle = () => {
+    openMenu ? setOpenMenu(false) : setOpenMenu(true)
+  }
+
   return (
     <div>
-      <TbMenu2 className="text-3xl" />
+      <div className="lg:invisible">
+        {openMenu ? (
+          <TbArrowBarLeft className="text-3xl" onClick={toggle} />
+        ) : (
+          <TbMenu2 className="text-3xl" onClick={toggle} />
+        )}
+      </div>
     </div>
   )
 }

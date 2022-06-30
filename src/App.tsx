@@ -12,8 +12,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Calendar />} />
-          <Route path="private" element={<Calendar />} />
-          <Route path="team" element={<ComingSoon />} />
+          <Route path="my-calendar" element={<Calendar />} />
+          <Route path="for-teams" element={<ComingSoon />} />
           <Route path="public" element={<ComingSoon />} />
           <Route path="account" element={<ComingSoon />} />
           <Route path="*" element={<NotFound />} />

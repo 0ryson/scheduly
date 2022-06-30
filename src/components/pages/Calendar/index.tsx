@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Content from '../../organisms/Content'
 import Footer from '../../organisms/Footer'
 import Header from '../../organisms/Header'
-import Menu from '../../organisms/Menu'
+import Menu from '../../molecules/Menu'
 import CalendarViews from '../../molecules/CalendarViews'
 import ToggleMenu from '../../molecules/ToggleMenu'
 import Brand from '../../molecules/Brand'
@@ -91,9 +91,8 @@ const Calendar = () => {
   return (
     <div className="w-full h-screen flex bg-white">
       <div className="static px-8 py-6 max-w-sm border-r border-slate-200 break-words">
-        <Menu>
-          <Brand />
-        </Menu>
+        <Brand />
+        <Menu pages={['private', 'team', 'public']} />
       </div>
       <div className="w-full flex flex-col justify-between bg-slate-200">
         <div className="px-8 py-6 bg-white">

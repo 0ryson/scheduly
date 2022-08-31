@@ -9,11 +9,21 @@
             window.location = 'tiendanimal://login';
 
             var url_string = window.location.href;
-            document.getElementById("url_string").innerText(url_string);
+            var p = document.getElementById("url_string");
+            var t = document.createTextNode(url_string);
+            p.appendChild(t);
+
             var url = new URL(url_string);
-            document.getElementById("url").innerText(url);
+            document.getElementById("url");
+            var p = document.getElementById("url");
+            var t = document.createTextNode(url);
+            p.appendChild(t);
+
             var paramValue = url.searchParams.get("data");
-            document.getElementById("paramValue").innerText(paramValue);
+            document.getElementById("paramValue");
+            var p = document.getElementById("paramValue");
+            var t = document.createTextNode(paramValue);
+            p.appendChild(t);
             
             link = document.querySelector('a')
             link.click();

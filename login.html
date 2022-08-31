@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <a href="tiendanimal://login">tiendanimal://login</a>
+        <a href="">tiendanimal://login</a>
         <p id="params"></p>
+        <p id="redirection"></p>
         <script>
-            window.location = 'tiendanimal://login';
+            /* window.location = 'tiendanimal://login'; */
 
             var params = window.location.search;
             var p = document.getElementById("params");
@@ -12,6 +13,12 @@
             p.appendChild(t);
             
             var link = document.querySelector('a')
+            var redirection = 'tiendanimal://login' + params;
+            link.href(redirection);
+            var p = document.getElementById("redirection");
+            var t = document.createTextNode(redirection);
+            p.appendChild(t);
+
             setTimeout(() => {
                 link.click();
             }, 5000)

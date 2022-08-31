@@ -14,7 +14,7 @@
             
             var link = document.getElementById('a')
             var redirection = 'tiendanimal://login' + params;
-            link.href(redirection);
+            link.setAttribute("href", redirection);
             var p2 = document.getElementById("redirection");
             var t2 = document.createTextNode(redirection);
             p2.appendChild(t2);

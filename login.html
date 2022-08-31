@@ -2,27 +2,13 @@
 <html>
     <body>
         <a href="tiendanimal://login">tiendanimal://login</a>
-        <p id="url_string"></p>
-        <p id="url"></p>
-        <p id="paramValue"></p>
+        <p id="params"></p>
         <script>
             window.location = 'tiendanimal://login';
 
-            var url_string = window.location.href;
-            var p = document.getElementById("url_string");
-            var t = document.createTextNode(url_string);
-            p.appendChild(t);
-
-            var url = new URL(url_string);
-            document.getElementById("url");
-            var p = document.getElementById("url");
-            var t = document.createTextNode(url);
-            p.appendChild(t);
-
-            var paramValue = url.searchParams.get("data");
-            document.getElementById("paramValue");
-            var p = document.getElementById("paramValue");
-            var t = document.createTextNode(paramValue);
+            var params = window.location.search;
+            var p = document.getElementById("params");
+            var t = document.createTextNode(params);
             p.appendChild(t);
             
             link = document.querySelector('a')

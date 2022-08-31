@@ -2,9 +2,19 @@
 <html>
     <body>
         <a href="tiendanimal://login">tiendanimal://login</a>
+        <p id="url_string"></p>
+        <p id="url"></p>
+        <p id="paramValue"></p>
         <script>
             window.location = 'tiendanimal://login';
 
+            var url_string = window.location.href;
+            document.getElementById("url_string").innerText(url_string);
+            var url = new URL(url_string);
+            document.getElementById("url").innerText(url);
+            var paramValue = url.searchParams.get("data");
+            document.getElementById("paramValue").innerText(paramValue);
+            
             link = document.querySelector('a')
             link.click();
         </script>

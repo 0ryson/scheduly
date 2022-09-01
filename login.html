@@ -2,13 +2,38 @@
 <html>
     <body>
         <a id="link">Open app</a>
+        <p id="p1"></p>
+        <p id="p2"></p>
+        <p id="p3"></p>
+        <p id="p4"></p>
+        <p id="p5"></p>
         <script>
             const params = window.location.search
-            const platform = params.split('platform=')[1].split('&')[0]
+            const platfom = params.split('platfom=')[1].split('&')[0]
             const store = params.split('store=')[1].split('&')[0]
 
-            const prefix = platform == 'android' ? `${store}://my-host/` : `${store}://`
+            const prefix = platfom == 'android' ? `${store}://my-host/` : `${store}://`
             const redirection = `${prefix}login${params}`
+
+            var p1 = document.getElementById("p1");
+            var t1 = document.createTextNode("params: ", params);
+            p1.appendChild(t1);
+
+            var p2 = document.getElementById("p2");
+            var t2 = document.createTextNode("platfom: ", platfom);
+            p2.appendChild(t2);
+
+            var p3 = document.getElementById("p3");
+            var t3 = document.createTextNode("store: ", store);
+            p3.appendChild(t3);
+
+            var p4 = document.getElementById("p4");
+            var t4 = document.createTextNode("prefix: ", prefix);
+            p4.appendChild(t4);
+
+            var p5 = document.getElementById("p5");
+            var t5 = document.createTextNode("redirection: ", redirection);
+            p5.appendChild(t5);
 
             let link = document.getElementById('link')
             link.setAttribute('href', redirection)

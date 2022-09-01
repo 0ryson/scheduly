@@ -3,11 +3,13 @@
     <body>
         <a id="link">Open app</a>
         <script>
-            var params = window.location.search;
-            var link = document.getElementById('link')
-            var redirection = 'tiendanimal://login' + params;
-            link.setAttribute('href', redirection);
-            link.click();
+            let params = window.location.search
+            let store = params.split('?store=')[1].split('&')[0]
+            let redirection = store + '://login' + params
+            
+            let link = document.getElementById('link')
+            link.setAttribute('href', redirection)
+            link.click()
         </script>
     </body>
 </html>

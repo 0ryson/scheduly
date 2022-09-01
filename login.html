@@ -4,11 +4,10 @@
         <a id="link">Open app</a>
         <script>
             const params = window.location.search
-            const platfom = params.split('platform=')[1].split('&')[0]
-            const os = platfom.split('-')[0]
-            const store = platfom.split('-')[1]
+            const store = params.split('store=')[1].split('&')[0]
+            const os = window.navigator.platform
 
-            const prefix = os == 'android' ? `${store}://my-host/` : `${store}://`
+            const prefix = os == 'Android' ? `${store}://my-host/` : `${store}://`
             const redirection = `${prefix}login${params}`
 
             let link = document.getElementById('link')

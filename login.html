@@ -5,8 +5,9 @@
         <script>
             let params = window.location.search
             let store = params.split('?store=')[1].split('&')[0]
+            params = params.replace('store=' + store + '&')
             let redirection = store + '://login' + params
-            
+
             let link = document.getElementById('link')
             link.setAttribute('href', redirection)
             link.click()

@@ -4,8 +4,11 @@
         <a id="link">Open app</a>
         <script>
             const params = window.location.search
-            const store = params.split('store=')[1].split('&')[0]
-            const googleParams = params.replace(`store=${store}&`, '')
+            let googleParams = ''
+            if (params !== '') {
+                const store = params.split('store=')[1].split('&')[0]
+                googleParams = params.replace(`store=${store}&`, '')
+            }
 
             const redirection = `tiendanimal://login${googleParams}`
 

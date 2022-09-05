@@ -5,15 +5,14 @@
         <script>
             const params = window.location.search
             const store = params.split('store=')[1].split('&')[0]
-            const os = window.navigator.platform
             const googleParams = params.replace(`store=${store}&`, '')
 
-            const prefix = os == 'Android' ? `${store}://my-host/` : `${store}://`
+            const prefix = store === '' ? 'tiendanimal://' : `${store}://`
             const redirection = `${prefix}login${googleParams}`
 
-            let link = document.getElementById('link')
-            link.setAttribute('href', redirection)
-            link.click()
+            let link = document.getElementById('link');
+            link.setAttribute('href', redirection);
+            link.click();
         </script>
     </body>
 </html>

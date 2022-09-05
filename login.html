@@ -6,7 +6,8 @@
             const params = window.location.search
             let googleParams = ''
             if (params !== '') {
-                const store = params.split('store=')[1].split('&')[0]
+                /* const store = params.split('store=')[1].split('&')[0] */
+                const store = 'tiendanimal'
                 googleParams = params.replace(`store=${store}&`, '')
             }
 

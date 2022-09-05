@@ -7,8 +7,7 @@
             const store = params.split('store=')[1].split('&')[0]
             const googleParams = params.replace(`store=${store}&`, '')
 
-            const prefix = store === '' ? 'tiendanimal://' : `${store}://`
-            const redirection = `${prefix}login${googleParams}`
+            const redirection = `tiendanimal://login${googleParams}`
 
             let link = document.getElementById('link');
             link.setAttribute('href', redirection);

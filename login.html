@@ -4,14 +4,13 @@
         <a id="link">Open app</a>
         <script>
             const params = window.location.search
-            let googleParams = ''
-            if (params !== '') {
-                /* const store = params.split('store=')[1].split('&')[0] */
-                const store = 'tiendanimal'
-                googleParams = params.replace(`store=${store}&`, '')
+            let store = 'tiendanimal'
+            
+            if (params.search(/store=/)) {
+                store = params.split('store=')[1].split('&')[0]
             }
 
-            const redirection = `tiendanimal://login${googleParams}`
+            const redirection = `${store}://login${params}`
 
             let link = document.getElementById('link');
             link.setAttribute('href', redirection);

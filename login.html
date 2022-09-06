@@ -6,7 +6,7 @@
             const params = window.location.search
             let store = 'tiendanimal'
             
-            if (params.search(/store=/)) {
+            if (params.search(/store=/) !== -1) {
                 store = params.split('store=')[1].split('&')[0]
             }
 
